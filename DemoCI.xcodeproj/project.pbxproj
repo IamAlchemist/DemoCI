@@ -12,6 +12,8 @@
 		722191E01CFC1D75009B4AF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722191DE1CFC1D75009B4AF1 /* Main.storyboard */; };
 		722191E21CFC1D75009B4AF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 722191E11CFC1D75009B4AF1 /* Assets.xcassets */; };
 		722191E51CFC1D75009B4AF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722191E31CFC1D75009B4AF1 /* LaunchScreen.storyboard */; };
+		722191ED1CFC1F09009B4AF1 /* GLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722191EC1CFC1F09009B4AF1 /* GLViewController.swift */; };
+		722191F01CFC2094009B4AF1 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722191EF1CFC2094009B4AF1 /* CameraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		722191E11CFC1D75009B4AF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		722191E41CFC1D75009B4AF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		722191E61CFC1D75009B4AF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		722191EC1CFC1F09009B4AF1 /* GLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLViewController.swift; sourceTree = "<group>"; };
+		722191EF1CFC2094009B4AF1 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +60,22 @@
 			children = (
 				722191DA1CFC1D75009B4AF1 /* AppDelegate.swift */,
 				722191DC1CFC1D75009B4AF1 /* ViewController.swift */,
+				722191EE1CFC1F0F009B4AF1 /* Camera */,
 				722191DE1CFC1D75009B4AF1 /* Main.storyboard */,
 				722191E11CFC1D75009B4AF1 /* Assets.xcassets */,
 				722191E31CFC1D75009B4AF1 /* LaunchScreen.storyboard */,
 				722191E61CFC1D75009B4AF1 /* Info.plist */,
 			);
 			path = DemoCI;
+			sourceTree = "<group>";
+		};
+		722191EE1CFC1F0F009B4AF1 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				722191EC1CFC1F09009B4AF1 /* GLViewController.swift */,
+				722191EF1CFC2094009B4AF1 /* CameraController.swift */,
+			);
+			name = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				722191ED1CFC1F09009B4AF1 /* GLViewController.swift in Sources */,
 				722191DD1CFC1D75009B4AF1 /* ViewController.swift in Sources */,
+				722191F01CFC2094009B4AF1 /* CameraController.swift in Sources */,
 				722191DB1CFC1D75009B4AF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
