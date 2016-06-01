@@ -115,7 +115,7 @@ class CameraController: NSObject {
     func initializeSession() {
         
         session = AVCaptureSession()
-        session.sessionPreset = AVCaptureSessionPresetHigh
+        session.sessionPreset = AVCaptureSessionPresetPhoto
         
         if previewType == .PreviewLayer {
             previewLayer = AVCaptureVideoPreviewLayer(session: self.session)

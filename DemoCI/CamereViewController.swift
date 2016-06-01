@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CameraViewController: UIViewController {
 
+    @IBOutlet weak var videoPreviewView: UIView!
+    @IBOutlet weak var controlsView: UIView!
+    @IBOutlet weak var facesView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +24,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 }
 
