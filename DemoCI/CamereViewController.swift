@@ -14,6 +14,9 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var controlsView: UIView!
     @IBOutlet weak var facesView: UIView!
     
+    @IBOutlet weak var focusButton: UIButton!
+    @IBOutlet weak var shutterButton: UIButton!
+    
     var cameraController : CameraController!
     
     override func viewDidLoad() {
@@ -24,6 +27,18 @@ class CameraViewController: UIViewController {
         if let previewLayer = cameraController.previewLayer {
             videoPreviewView.layer.addSublayer(previewLayer)
         }
+        
+        cameraController.registerObserver(self, property: CameraControlObservableSettingAdjustingFocus)
+        cameraController.registerObserver(self, property: CameraControlObservableSettingAdjustingWhiteBalance)
+        cameraController.registerObserver(self, property: CameraControlObservableSettingAdjustingExposure)
+        cameraController.registerObserver(self, property: CameraControlObservableSettingLensPosition)
+        cameraController.registerObserver(self, property: CameraControlObservableSettingISO)
+        cameraController.registerObserver(self, property: CameraControlObservableSettingExposureDuration)
+        cameraController.registerObserver(self, property: CameraControlObservableSettingExposureTargetOffset)
+        cameraController.registerObserver(self, property: CameraControlObservableSettingWBGains)
+        
+        
+        focusButton.selected = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -49,6 +64,17 @@ extension CameraViewController : CameraControllerDelegate {
     }
     
     func cameraController(cameraController: CameraController, didDetectFaces faces: Array<(id: Int, frame: CGRect)>) {
+    }
+}
+
+extension CameraViewController : CameraSettingValueObserver {
+    func cameraSetting(setting: String, valueChanged value: AnyObject) {
+//        switch setting {
+//        case CameraControlObservableSettingAdjustingFocus:
+//            <#code#>
+//        default:
+//            <#code#>
+//        }
     }
 }
 
