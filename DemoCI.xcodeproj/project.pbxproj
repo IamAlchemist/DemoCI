@@ -14,6 +14,15 @@
 		722191E51CFC1D75009B4AF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722191E31CFC1D75009B4AF1 /* LaunchScreen.storyboard */; };
 		722191ED1CFC1F09009B4AF1 /* GLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722191EC1CFC1F09009B4AF1 /* GLViewController.swift */; };
 		722191F01CFC2094009B4AF1 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722191EF1CFC2094009B4AF1 /* CameraController.swift */; };
+		722192091CFE8E65009B4AF1 /* GLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722191EC1CFC1F09009B4AF1 /* GLViewController.swift */; };
+		7221920A1CFE8E65009B4AF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722191DC1CFC1D75009B4AF1 /* ViewController.swift */; };
+		7221920B1CFE8E65009B4AF1 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722191EF1CFC2094009B4AF1 /* CameraController.swift */; };
+		7221920C1CFE8E65009B4AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722191DA1CFC1D75009B4AF1 /* AppDelegate.swift */; };
+		7221920F1CFE8E65009B4AF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722191E31CFC1D75009B4AF1 /* LaunchScreen.storyboard */; };
+		722192101CFE8E65009B4AF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 722191E11CFC1D75009B4AF1 /* Assets.xcassets */; };
+		722192111CFE8E65009B4AF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722191DE1CFC1D75009B4AF1 /* Main.storyboard */; };
+		722192181CFEB664009B4AF1 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722192171CFEB664009B4AF1 /* Main2.storyboard */; };
+		722192191CFEBB56009B4AF1 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722192171CFEB664009B4AF1 /* Main2.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +35,20 @@
 		722191E61CFC1D75009B4AF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		722191EC1CFC1F09009B4AF1 /* GLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLViewController.swift; sourceTree = "<group>"; };
 		722191EF1CFC2094009B4AF1 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		722192151CFE8E65009B4AF1 /* DemoCI2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCI2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		722192161CFE8E65009B4AF1 /* DemoCI copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DemoCI copy-Info.plist"; path = "/Users/alchemistli/Git/DemoCI/DemoCI copy-Info.plist"; sourceTree = "<absolute>"; };
+		722192171CFEB664009B4AF1 /* Main2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		722191D41CFC1D75009B4AF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7221920D1CFE8E65009B4AF1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +63,7 @@
 			children = (
 				722191D91CFC1D75009B4AF1 /* DemoCI */,
 				722191D81CFC1D75009B4AF1 /* Products */,
+				722192161CFE8E65009B4AF1 /* DemoCI copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				722191D71CFC1D75009B4AF1 /* DemoCI.app */,
+				722192151CFE8E65009B4AF1 /* DemoCI2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +83,7 @@
 				722191DC1CFC1D75009B4AF1 /* ViewController.swift */,
 				722191EE1CFC1F0F009B4AF1 /* Camera */,
 				722191DE1CFC1D75009B4AF1 /* Main.storyboard */,
+				722192171CFEB664009B4AF1 /* Main2.storyboard */,
 				722191E11CFC1D75009B4AF1 /* Assets.xcassets */,
 				722191E31CFC1D75009B4AF1 /* LaunchScreen.storyboard */,
 				722191E61CFC1D75009B4AF1 /* Info.plist */,
@@ -98,6 +120,23 @@
 			productReference = 722191D71CFC1D75009B4AF1 /* DemoCI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		722192071CFE8E65009B4AF1 /* DemoCI2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 722192121CFE8E65009B4AF1 /* Build configuration list for PBXNativeTarget "DemoCI2" */;
+			buildPhases = (
+				722192081CFE8E65009B4AF1 /* Sources */,
+				7221920D1CFE8E65009B4AF1 /* Frameworks */,
+				7221920E1CFE8E65009B4AF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DemoCI2;
+			productName = DemoCI;
+			productReference = 722192151CFE8E65009B4AF1 /* DemoCI2.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -127,6 +166,7 @@
 			projectRoot = "";
 			targets = (
 				722191D61CFC1D75009B4AF1 /* DemoCI */,
+				722192071CFE8E65009B4AF1 /* DemoCI2 */,
 			);
 		};
 /* End PBXProject section */
@@ -138,7 +178,19 @@
 			files = (
 				722191E51CFC1D75009B4AF1 /* LaunchScreen.storyboard in Resources */,
 				722191E21CFC1D75009B4AF1 /* Assets.xcassets in Resources */,
+				722192181CFEB664009B4AF1 /* Main2.storyboard in Resources */,
 				722191E01CFC1D75009B4AF1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7221920E1CFE8E65009B4AF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7221920F1CFE8E65009B4AF1 /* LaunchScreen.storyboard in Resources */,
+				722192101CFE8E65009B4AF1 /* Assets.xcassets in Resources */,
+				722192191CFEBB56009B4AF1 /* Main2.storyboard in Resources */,
+				722192111CFE8E65009B4AF1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +205,17 @@
 				722191DD1CFC1D75009B4AF1 /* ViewController.swift in Sources */,
 				722191F01CFC2094009B4AF1 /* CameraController.swift in Sources */,
 				722191DB1CFC1D75009B4AF1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		722192081CFE8E65009B4AF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				722192091CFE8E65009B4AF1 /* GLViewController.swift in Sources */,
+				7221920A1CFE8E65009B4AF1 /* ViewController.swift in Sources */,
+				7221920B1CFE8E65009B4AF1 /* CameraController.swift in Sources */,
+				7221920C1CFE8E65009B4AF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +346,28 @@
 			};
 			name = Release;
 		};
+		722192131CFE8E65009B4AF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "DemoCI copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.kauhaus.hulk.DemoCI2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		722192141CFE8E65009B4AF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "DemoCI copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.kauhaus.hulk.DemoCI2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -302,6 +387,16 @@
 				722191EB1CFC1D75009B4AF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		722192121CFE8E65009B4AF1 /* Build configuration list for PBXNativeTarget "DemoCI2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				722192131CFE8E65009B4AF1 /* Debug */,
+				722192141CFE8E65009B4AF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

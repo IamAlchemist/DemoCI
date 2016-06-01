@@ -24,6 +24,7 @@ let CameraControlObservableSettingAdjustingWhiteBalance = "CameraControlObservab
 
 protocol CameraControllerDelegate : class {
     func cameraController(cameraController:CameraController, didDetectFaces faces:Array<(id:Int,frame:CGRect)>)
+    func cameraContorller(cameraController:CameraController, didOutputImage image: CIImage)
 }
 
 enum CameraControllePreviewType {
@@ -114,7 +115,7 @@ class CameraController: NSObject {
     func initializeSession() {
         
         session = AVCaptureSession()
-        session.sessionPreset = AVCaptureSessionPresetPhoto
+        session.sessionPreset = AVCaptureSessionPresetHigh
         
         if previewType == .PreviewLayer {
             previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
@@ -450,7 +451,8 @@ class CameraController: NSObject {
             if let newNSValue = newValue as? NSValue {
                 var gains:AVCaptureWhiteBalanceGains? = nil
                 newNSValue.getValue(&gains)
-                if let newTemperatureAndTint = currentCameraDevice?.temperatureAndTintValuesForDeviceWhiteBalanceGains(gains!) {
+                if let gains = gains,
+                    let newTemperatureAndTint = currentCameraDevice?.temperatureAndTintValuesForDeviceWhiteBalanceGains(gains) {
                     newValue = WhiteBalanceValues(temperatureAndTintValues: newTemperatureAndTint)
                 }
             }
@@ -473,10 +475,9 @@ class CameraController: NSObject {
 extension CameraController: AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
-        
-//        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-//        let image = CIImage(CVPixelBuffer: pixelBuffer)
-//		self.delegate?.cameraController?(self, didOutputImage: image)
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        let image = CIImage(CVPixelBuffer: pixelBuffer)
+        self.delegate?.cameraContorller(self, didOutputImage: image)
     }
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
@@ -523,6 +524,7 @@ private extension CameraController {
                     currentDevice.unlockForConfiguration()
                 } catch let error1 as NSError {
                     error = error1
+                    print("\(error)")
                 } catch {
                     fatalError()
                 }
@@ -563,9 +565,10 @@ private extension CameraController {
             let possibleCameraInput: AnyObject?
             do {
                 possibleCameraInput = try AVCaptureDeviceInput(device: self.currentCameraDevice)
-            } catch var error1 as NSError {
+            } catch let error1 as NSError {
                 error = error1
                 possibleCameraInput = nil
+                print("\(error)")
             } catch {
                 fatalError()
             }
