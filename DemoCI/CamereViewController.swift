@@ -19,6 +19,8 @@ class CameraViewController: UIViewController {
     
     var cameraController : CameraController!
     
+    private var faceViews = [UIView]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,6 +66,16 @@ extension CameraViewController : CameraControllerDelegate {
     }
     
     func cameraController(cameraController: CameraController, didDetectFaces faces: Array<(id: Int, frame: CGRect)>) {
+        prepareFaceView(faces.count - faceViews.count)
+        for (idx, face) in faces.enumerate() {
+            faceViews[idx].frame = face.frame
+        }
+    }
+}
+
+private extension CameraViewController {
+    func prepareFaceView(diff : Int) {
+        //TODO:
     }
 }
 
@@ -77,4 +89,6 @@ extension CameraViewController : CameraSettingValueObserver {
 //        }
     }
 }
+
+
 
