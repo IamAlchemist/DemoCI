@@ -21,17 +21,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3L-gu-ppZ">
                                 <rect key="frame" x="0.0" y="480" width="600" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leO-ZB-354">
-                                        <rect key="frame" x="40" y="45" width="46" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title=" F ">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaB-Yl-isy">
-                                        <rect key="frame" x="179" y="45" width="46" height="44"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaB-Yl-isy">
+                                        <rect key="frame" x="285" y="45" width="30" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal">
@@ -44,10 +35,53 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leO-ZB-354">
+                                        <rect key="frame" x="185" y="43" width="30" height="33"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title=" F ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="je2-Q3-MfX" userLabel="Focus Indicator">
+                                        <rect key="frame" x="198" y="81" width="4" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="4" id="H56-8d-Mgb"/>
+                                            <constraint firstAttribute="height" constant="4" id="pqS-NH-6gW"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mg-cX-LsX" userLabel="Exposure Button">
+                                        <rect key="frame" x="235" y="43.5" width="30" height="33"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="E">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsQ-bg-PsH" userLabel="Exposure Indicator">
+                                        <rect key="frame" x="248" y="81.5" width="4" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="OCW-Zw-mz4"/>
+                                            <constraint firstAttribute="width" constant="4" id="bAZ-yk-8K6"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.86274509799999999" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="je2-Q3-MfX" firstAttribute="centerX" secondItem="leO-ZB-354" secondAttribute="centerX" id="9QT-L1-4DF"/>
                                     <constraint firstAttribute="height" constant="120" id="Bep-p8-SDb"/>
+                                    <constraint firstItem="leO-ZB-354" firstAttribute="centerX" secondItem="N3L-gu-ppZ" secondAttribute="centerX" constant="-100" id="Ga8-3B-iXW"/>
+                                    <constraint firstItem="0Mg-cX-LsX" firstAttribute="centerX" secondItem="N3L-gu-ppZ" secondAttribute="centerX" constant="-50" id="SFd-v4-w0g"/>
+                                    <constraint firstItem="0Mg-cX-LsX" firstAttribute="centerY" secondItem="N3L-gu-ppZ" secondAttribute="centerY" id="T5T-p4-8rs"/>
+                                    <constraint firstItem="gaB-Yl-isy" firstAttribute="centerY" secondItem="N3L-gu-ppZ" secondAttribute="centerY" id="WjS-Wg-bMH"/>
+                                    <constraint firstItem="gaB-Yl-isy" firstAttribute="centerX" secondItem="N3L-gu-ppZ" secondAttribute="centerX" id="aVz-rc-8hR"/>
+                                    <constraint firstItem="je2-Q3-MfX" firstAttribute="top" secondItem="leO-ZB-354" secondAttribute="bottom" constant="5" id="bnu-kM-6Ne"/>
+                                    <constraint firstItem="KsQ-bg-PsH" firstAttribute="top" secondItem="0Mg-cX-LsX" secondAttribute="bottom" constant="5" id="pcV-Y0-Djc"/>
+                                    <constraint firstItem="KsQ-bg-PsH" firstAttribute="centerX" secondItem="0Mg-cX-LsX" secondAttribute="centerX" id="rPz-wM-vwu"/>
+                                    <constraint firstItem="leO-ZB-354" firstAttribute="centerY" secondItem="N3L-gu-ppZ" secondAttribute="centerY" id="wcc-4R-bxr"/>
                                 </constraints>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
@@ -105,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="317" y="627"/>
+            <point key="canvasLocation" x="320" y="641"/>
         </scene>
     </scenes>
 </document>
