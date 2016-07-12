@@ -31,6 +31,7 @@ class CameraViewController: UIViewController {
     
     var cameraController : CameraController!
     
+    private var currentControlsViewController : UIViewController?
     private var faceViews = [UIView]()
     
     override func viewDidLoad() {
@@ -71,6 +72,19 @@ class CameraViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let controlsSegue = segue as? ControlsSegue {
+            controlsSegue.currentViewController = currentControlsViewController
+            controlsSegue.hostView = controlsView
+            
+            currentControlsViewController = controlsSegue.destinationViewController
+            
+            if let currentControlsViewController = currentControlsViewController as? CameraControlsViewControllerProtocol {
+                currentControlsViewController.cameraController = cameraController
+            }
+        }
+    }
 }
 
 extension CameraViewController : CameraControllerDelegate {
@@ -103,6 +117,35 @@ private extension CameraViewController {
                 faceViews[0].removeFromSuperview()
                 faceViews.removeAtIndex(0)
             }
+        }
+    }
+
+    @IBAction func toggoleControls(sender: UIButton) {
+        if sender.selected {
+            sender.selected = false
+            controlsView.hidden = true
+        }
+        else {
+            controlsView.hidden = false
+            var segueIdentifier : String?
+            switch sender {
+            case focusButton:
+                segueIdentifier = "Embed Focus"
+            case exposureButton:
+                segueIdentifier = "Embed Exposure"
+            case whiteBalanceButton:
+                segueIdentifier = "Embed White Balance"
+            case optionsButton:
+                segueIdentifier = "Embed Options"
+            default:break
+            }
+            
+            for button in [focusButton, exposureButton, whiteBalanceButton, optionsButton] {
+                button.selected = button == sender
+            }
+            
+            guard let _segueIdentifier = segueIdentifier else { return }
+            performSegueWithIdentifier(_segueIdentifier, sender: self)
         }
     }
 }
