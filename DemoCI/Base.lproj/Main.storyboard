@@ -68,17 +68,55 @@
                                             <constraint firstAttribute="width" constant="4" id="bAZ-yk-8K6"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4W-Qc-oeR" userLabel="White Balance">
+                                        <rect key="frame" x="335" y="43.5" width="30" height="33"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="WB">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ds-BA-x3t" userLabel="White Balance Indicator">
+                                        <rect key="frame" x="348" y="80" width="4" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="RlV-Gl-CHk"/>
+                                            <constraint firstAttribute="width" constant="4" id="yhb-H8-F2S"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tie-5T-w4G" userLabel="Options Button">
+                                        <rect key="frame" x="385" y="43.5" width="30" height="33"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="...">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atf-DY-KZs">
+                                        <rect key="frame" x="398" y="80" width="4" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="4" id="BSt-jO-JiN"/>
+                                            <constraint firstAttribute="height" constant="4" id="sfv-HM-5hM"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.86274509799999999" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="l4W-Qc-oeR" firstAttribute="centerX" secondItem="N3L-gu-ppZ" secondAttribute="centerX" constant="50" id="7xX-aa-2eW"/>
+                                    <constraint firstItem="tie-5T-w4G" firstAttribute="centerX" secondItem="N3L-gu-ppZ" secondAttribute="centerX" constant="100" id="8vs-5k-j9p"/>
                                     <constraint firstItem="je2-Q3-MfX" firstAttribute="centerX" secondItem="leO-ZB-354" secondAttribute="centerX" id="9QT-L1-4DF"/>
                                     <constraint firstAttribute="height" constant="120" id="Bep-p8-SDb"/>
                                     <constraint firstItem="leO-ZB-354" firstAttribute="centerX" secondItem="N3L-gu-ppZ" secondAttribute="centerX" constant="-100" id="Ga8-3B-iXW"/>
+                                    <constraint firstItem="atf-DY-KZs" firstAttribute="top" secondItem="tie-5T-w4G" secondAttribute="bottom" constant="3.5" id="Mzt-eG-L0o"/>
                                     <constraint firstItem="0Mg-cX-LsX" firstAttribute="centerX" secondItem="N3L-gu-ppZ" secondAttribute="centerX" constant="-50" id="SFd-v4-w0g"/>
                                     <constraint firstItem="0Mg-cX-LsX" firstAttribute="centerY" secondItem="N3L-gu-ppZ" secondAttribute="centerY" id="T5T-p4-8rs"/>
+                                    <constraint firstItem="l4W-Qc-oeR" firstAttribute="centerY" secondItem="N3L-gu-ppZ" secondAttribute="centerY" id="Tdk-WE-kg2"/>
                                     <constraint firstItem="gaB-Yl-isy" firstAttribute="centerY" secondItem="N3L-gu-ppZ" secondAttribute="centerY" id="WjS-Wg-bMH"/>
+                                    <constraint firstItem="3ds-BA-x3t" firstAttribute="top" secondItem="l4W-Qc-oeR" secondAttribute="bottom" constant="3.5" id="WyC-7U-LYq"/>
                                     <constraint firstItem="gaB-Yl-isy" firstAttribute="centerX" secondItem="N3L-gu-ppZ" secondAttribute="centerX" id="aVz-rc-8hR"/>
                                     <constraint firstItem="je2-Q3-MfX" firstAttribute="top" secondItem="leO-ZB-354" secondAttribute="bottom" constant="5" id="bnu-kM-6Ne"/>
+                                    <constraint firstItem="tie-5T-w4G" firstAttribute="centerY" secondItem="N3L-gu-ppZ" secondAttribute="centerY" id="fDk-Au-DI8"/>
+                                    <constraint firstItem="3ds-BA-x3t" firstAttribute="centerX" secondItem="l4W-Qc-oeR" secondAttribute="centerX" id="kij-bM-kVL"/>
+                                    <constraint firstItem="atf-DY-KZs" firstAttribute="centerX" secondItem="tie-5T-w4G" secondAttribute="centerX" id="pOC-K2-M7y"/>
                                     <constraint firstItem="KsQ-bg-PsH" firstAttribute="top" secondItem="0Mg-cX-LsX" secondAttribute="bottom" constant="5" id="pcV-Y0-Djc"/>
                                     <constraint firstItem="KsQ-bg-PsH" firstAttribute="centerX" secondItem="0Mg-cX-LsX" secondAttribute="centerX" id="rPz-wM-vwu"/>
                                     <constraint firstItem="leO-ZB-354" firstAttribute="centerY" secondItem="N3L-gu-ppZ" secondAttribute="centerY" id="wcc-4R-bxr"/>
