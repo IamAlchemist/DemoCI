@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3L-gu-ppZ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3L-gu-ppZ" userLabel="Buttons Container">
                                 <rect key="frame" x="0.0" y="480" width="600" height="120"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaB-Yl-isy">
@@ -51,9 +51,14 @@
                                             <constraint firstAttribute="width" constant="4" id="H56-8d-Mgb"/>
                                             <constraint firstAttribute="height" constant="4" id="pqS-NH-6gW"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mg-cX-LsX" userLabel="Exposure Button">
-                                        <rect key="frame" x="235" y="43.5" width="30" height="33"/>
+                                        <rect key="frame" x="235" y="43" width="30" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="E">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,15 +66,20 @@
                                         </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsQ-bg-PsH" userLabel="Exposure Indicator">
-                                        <rect key="frame" x="248" y="81.5" width="4" height="4"/>
+                                        <rect key="frame" x="248" y="81" width="4" height="4"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="OCW-Zw-mz4"/>
                                             <constraint firstAttribute="width" constant="4" id="bAZ-yk-8K6"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4W-Qc-oeR" userLabel="White Balance">
-                                        <rect key="frame" x="335" y="43.5" width="30" height="33"/>
+                                        <rect key="frame" x="335" y="43" width="30" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="WB">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,9 +92,14 @@
                                             <constraint firstAttribute="height" constant="4" id="RlV-Gl-CHk"/>
                                             <constraint firstAttribute="width" constant="4" id="yhb-H8-F2S"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tie-5T-w4G" userLabel="Options Button">
-                                        <rect key="frame" x="385" y="43.5" width="30" height="33"/>
+                                        <rect key="frame" x="385" y="43" width="30" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="...">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,6 +112,11 @@
                                             <constraint firstAttribute="width" constant="4" id="BSt-jO-JiN"/>
                                             <constraint firstAttribute="height" constant="4" id="sfv-HM-5hM"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.86274509799999999" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -127,7 +147,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F: 0.5 - ISO: 200 - SPEED: 1/60 - OFFSET: +4.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBx-93-tBO" userLabel="Text Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F: 0.5 - ISO: 200 - SPEED: 1/60 - OFFSET: +4.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBx-93-tBO" userLabel="Current Value Label">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
                                 <color key="backgroundColor" red="0.1843137255" green="0.18823529410000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -152,8 +172,15 @@
                                     <constraint firstItem="CDW-WT-qa5" firstAttribute="centerY" secondItem="ebH-Fn-ohb" secondAttribute="centerY" id="yfn-Rj-Npq"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXA-Mb-gLZ">
+                                <rect key="frame" x="0.0" y="300" width="600" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Oiq-Xj-vIj"/>
+                                </constraints>
+                            </containerView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="N3L-gu-ppZ" firstAttribute="top" secondItem="hXA-Mb-gLZ" secondAttribute="bottom" id="7cm-CB-LgN"/>
                             <constraint firstAttribute="trailing" secondItem="CBx-93-tBO" secondAttribute="trailing" id="BxF-vj-N80"/>
                             <constraint firstItem="ebH-Fn-ohb" firstAttribute="bottom" secondItem="N3L-gu-ppZ" secondAttribute="top" id="GLE-F7-pUg"/>
                             <constraint firstItem="N3L-gu-ppZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IU5-Dd-7Gt"/>
@@ -163,12 +190,15 @@
                             <constraint firstItem="CBx-93-tBO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Z9H-z7-POc"/>
                             <constraint firstItem="ebH-Fn-ohb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cZE-fK-pi0"/>
                             <constraint firstAttribute="trailing" secondItem="N3L-gu-ppZ" secondAttribute="trailing" id="ciL-7b-VNf"/>
+                            <constraint firstItem="hXA-Mb-gLZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ndf-tm-8ja"/>
                             <constraint firstAttribute="trailing" secondItem="ebH-Fn-ohb" secondAttribute="trailing" id="uTi-Q9-lS3"/>
+                            <constraint firstAttribute="trailing" secondItem="hXA-Mb-gLZ" secondAttribute="trailing" id="vAf-1i-hEj"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="controlsView" destination="N3L-gu-ppZ" id="EaW-2R-e09"/>
+                        <outlet property="currentValueLabel" destination="CBx-93-tBO" id="KtF-Zu-0dp"/>
                         <outlet property="exposureButton" destination="0Mg-cX-LsX" id="zvN-uJ-KQO"/>
                         <outlet property="exposureIndicator" destination="KsQ-bg-PsH" id="UAa-Vy-UIX"/>
                         <outlet property="facesView" destination="CDW-WT-qa5" id="n9T-EF-P56"/>
@@ -180,11 +210,91 @@
                         <outlet property="videoPreviewView" destination="ebH-Fn-ohb" id="M6x-1I-fXT"/>
                         <outlet property="whiteBalanceButton" destination="l4W-Qc-oeR" id="cl2-nE-otx"/>
                         <outlet property="whiteBalanceIndicator" destination="3ds-BA-x3t" id="iZS-7B-QZe"/>
+                        <segue destination="JIf-Jk-f7m" kind="custom" identifier="Embed Focus" customClass="ControlsSegue" customModule="DemoCI" customModuleProvider="target" id="xVJ-Oz-OOQ"/>
+                        <segue destination="4mb-Ln-dCp" kind="custom" identifier="Embed Exposure" customClass="ControlsSegue" customModule="DemoCI" customModuleProvider="target" id="8r9-8c-9qz"/>
+                        <segue destination="DGP-H1-p6C" kind="custom" identifier="Embed WhiteBalance" customClass="ControlsSegue" customModule="DemoCI" customModuleProvider="target" id="0F5-fS-yXO"/>
+                        <segue destination="BSf-WU-HHF" kind="custom" identifier="Embed Options" customClass="ControlsSegue" customModule="DemoCI" customModuleProvider="target" id="gGP-jG-UTg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="320" y="641"/>
+        </scene>
+        <!--Focus View Controller-->
+        <scene sceneID="8Us-eG-2Zx">
+            <objects>
+                <viewController id="JIf-Jk-f7m" customClass="FocusViewController" customModule="DemoCI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yjY-J0-rwv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="180"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="frv-Cf-EZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085" y="229"/>
+        </scene>
+        <!--Exposure View Controller-->
+        <scene sceneID="yCc-y9-Zzj">
+            <objects>
+                <viewController id="4mb-Ln-dCp" customClass="ExposureViewController" customModule="DemoCI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TD3-Be-reY"/>
+                        <viewControllerLayoutGuide type="bottom" id="DYT-Iq-1YN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="svQ-dD-uVk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.045508780759999999" blue="0.1883616887" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="180"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yP6-1X-oij" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085" y="466"/>
+        </scene>
+        <!--Options View Controller-->
+        <scene sceneID="aj4-Ol-nWd">
+            <objects>
+                <viewController id="BSf-WU-HHF" customClass="OptionsViewController" customModule="DemoCI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UDB-xg-8VC"/>
+                        <viewControllerLayoutGuide type="bottom" id="NZi-4p-hEP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aDh-G1-8XJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="180"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klD-C2-8Hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085" y="962"/>
+        </scene>
+        <!--White Balance View Controller-->
+        <scene sceneID="cQz-G7-1af">
+            <objects>
+                <viewController id="DGP-H1-p6C" customClass="WhiteBalanceViewController" customModule="DemoCI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9O4-ut-C5x"/>
+                        <viewControllerLayoutGuide type="bottom" id="gtK-6E-bqU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c1p-ak-A9y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="180"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TIV-Cc-C31" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085" y="705"/>
         </scene>
     </scenes>
 </document>

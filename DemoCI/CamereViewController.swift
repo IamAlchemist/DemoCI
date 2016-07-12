@@ -10,6 +10,7 @@ import UIKit
 
 class CameraViewController: UIViewController {
 
+    @IBOutlet weak var currentValueLabel: UILabel!
     @IBOutlet weak var videoPreviewView: UIView!
     @IBOutlet weak var controlsView: UIView!
     @IBOutlet weak var facesView: UIView!
