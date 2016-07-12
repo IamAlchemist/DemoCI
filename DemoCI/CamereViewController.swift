@@ -75,7 +75,23 @@ extension CameraViewController : CameraControllerDelegate {
 
 private extension CameraViewController {
     func prepareFaceView(diff : Int) {
-        //TODO:
+        if diff > 0 {
+            for _ in 0..<diff {
+                let faceView = UIView(frame: CGRectZero)
+                faceView.backgroundColor = UIColor.clearColor()
+                faceView.layer.borderColor = UIColor.yellowColor().CGColor
+                faceView.layer.borderWidth = 1.0
+                
+                facesView.addSubview(faceView)
+                faceViews.append(faceView)
+            }
+        }
+        else {
+            for _ in 0..<abs(diff) {
+                faceViews[0].removeFromSuperview()
+                faceViews.removeAtIndex(0)
+            }
+        }
     }
 }
 
