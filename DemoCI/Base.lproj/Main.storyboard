@@ -169,10 +169,17 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="controlsView" destination="N3L-gu-ppZ" id="EaW-2R-e09"/>
+                        <outlet property="exposureButton" destination="0Mg-cX-LsX" id="zvN-uJ-KQO"/>
+                        <outlet property="exposureIndicator" destination="KsQ-bg-PsH" id="UAa-Vy-UIX"/>
                         <outlet property="facesView" destination="CDW-WT-qa5" id="n9T-EF-P56"/>
                         <outlet property="focusButton" destination="leO-ZB-354" id="QrU-D3-oMk"/>
+                        <outlet property="focusIndicator" destination="je2-Q3-MfX" id="hhz-78-cpo"/>
+                        <outlet property="optionsButton" destination="tie-5T-w4G" id="sTD-Ml-EsM"/>
+                        <outlet property="optionsIndicator" destination="atf-DY-KZs" id="URp-fT-vgj"/>
                         <outlet property="shutterButton" destination="gaB-Yl-isy" id="U4L-Gy-6wQ"/>
                         <outlet property="videoPreviewView" destination="ebH-Fn-ohb" id="M6x-1I-fXT"/>
+                        <outlet property="whiteBalanceButton" destination="l4W-Qc-oeR" id="cl2-nE-otx"/>
+                        <outlet property="whiteBalanceIndicator" destination="3ds-BA-x3t" id="iZS-7B-QZe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

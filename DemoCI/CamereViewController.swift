@@ -15,7 +15,18 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var facesView: UIView!
     
     @IBOutlet weak var focusButton: UIButton!
+    @IBOutlet weak var focusIndicator: UIView!
+    
     @IBOutlet weak var shutterButton: UIButton!
+    
+    @IBOutlet weak var exposureButton: UIButton!
+    @IBOutlet weak var exposureIndicator: UIView!
+    
+    @IBOutlet weak var whiteBalanceButton: UIButton!
+    @IBOutlet weak var whiteBalanceIndicator: UIView!
+    
+    @IBOutlet weak var optionsButton: UIButton!
+    @IBOutlet weak var optionsIndicator: UIView!
     
     var cameraController : CameraController!
     
