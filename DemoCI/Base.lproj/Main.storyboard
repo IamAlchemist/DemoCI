@@ -175,7 +175,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="nlm-8B-Kal"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="8"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -201,6 +201,7 @@
                                 </constraints>
                             </containerView>
                         </subviews>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="N3L-gu-ppZ" firstAttribute="top" secondItem="hXA-Mb-gLZ" secondAttribute="bottom" id="7cm-CB-LgN"/>
                             <constraint firstAttribute="trailing" secondItem="CBx-93-tBO" secondAttribute="trailing" id="BxF-vj-N80"/>
@@ -216,6 +217,9 @@
                             <constraint firstAttribute="trailing" secondItem="ebH-Fn-ohb" secondAttribute="trailing" id="uTi-Q9-lS3"/>
                             <constraint firstAttribute="trailing" secondItem="hXA-Mb-gLZ" secondAttribute="trailing" id="vAf-1i-hEj"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="C2u-E2-GJa" appends="YES" id="hWT-Mq-b4G"/>
+                        </connections>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
@@ -239,6 +243,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="C2u-E2-GJa">
+                    <connections>
+                        <action selector="focusOnPointOfInterest:" destination="BYZ-38-t0r" id="Hjq-tk-Nzb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="320" y="641"/>
         </scene>

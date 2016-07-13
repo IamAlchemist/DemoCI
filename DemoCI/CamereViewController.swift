@@ -167,6 +167,14 @@ private extension CameraViewController {
         }
     }
     
+    @IBAction func focusOnPointOfInterest(sender: UITapGestureRecognizer) {
+        if sender.state == .Ended {
+            let point = sender.locationInView(sender.view)
+            cameraController.lockFocusAtPointOfInterest(point)
+        }
+        
+    }
+    
     func displayCurrentValues() {
         var currentValuesTextComponents = [String]()
         
