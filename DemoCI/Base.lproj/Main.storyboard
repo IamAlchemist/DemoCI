@@ -63,10 +63,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mg-cX-LsX" userLabel="Exposure Button">
                                         <rect key="frame" x="235" y="43" width="30" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="E">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="toggoleControls:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jUO-jA-yoY"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsQ-bg-PsH" userLabel="Exposure Indicator">
                                         <rect key="frame" x="248" y="81" width="4" height="4"/>
@@ -84,9 +88,13 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4W-Qc-oeR" userLabel="White Balance">
                                         <rect key="frame" x="335" y="43" width="30" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="WB">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="toggoleControls:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5IY-YH-O5e"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ds-BA-x3t" userLabel="White Balance Indicator">
                                         <rect key="frame" x="348" y="80" width="4" height="4"/>
@@ -104,9 +112,13 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tie-5T-w4G" userLabel="Options Button">
                                         <rect key="frame" x="385" y="43" width="30" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="...">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="toggoleControls:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UFp-YK-36f"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atf-DY-KZs">
                                         <rect key="frame" x="398" y="80" width="4" height="4"/>
@@ -200,7 +212,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="controlsView" destination="N3L-gu-ppZ" id="EaW-2R-e09"/>
+                        <outlet property="controlsView" destination="hXA-Mb-gLZ" id="eQc-d4-Obj"/>
                         <outlet property="currentValueLabel" destination="CBx-93-tBO" id="KtF-Zu-0dp"/>
                         <outlet property="exposureButton" destination="0Mg-cX-LsX" id="zvN-uJ-KQO"/>
                         <outlet property="exposureIndicator" destination="KsQ-bg-PsH" id="UAa-Vy-UIX"/>
@@ -227,6 +239,10 @@
         <scene sceneID="8Us-eG-2Zx">
             <objects>
                 <viewController id="JIf-Jk-f7m" customClass="FocusViewController" customModule="DemoCI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KIw-3T-rc8"/>
+                        <viewControllerLayoutGuide type="bottom" id="tr1-wq-aBu"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yjY-J0-rwv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,7 +306,7 @@
                     <view key="view" contentMode="scaleToFill" id="c1p-ak-A9y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.33333333329999998" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="180"/>
