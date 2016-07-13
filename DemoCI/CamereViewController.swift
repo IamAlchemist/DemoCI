@@ -85,6 +85,13 @@ class CameraViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func shutterButtonTapped(sender: UIButton) {
+        cameraController.captureStillImage { (image, metadata) in
+            self.view.layer.contents = image
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+    }
 }
 
 extension CameraViewController : CameraControllerDelegate {
