@@ -80,7 +80,7 @@ class CameraViewController: UIViewController {
             
             currentControlsViewController = controlsSegue.destinationViewController
             
-            if let currentControlsViewController = currentControlsViewController as? CameraControlsViewControllerProtocol {
+            if var currentControlsViewController = currentControlsViewController as? CameraControlsViewControllerProtocol {
                 currentControlsViewController.cameraController = cameraController
             }
         }
@@ -101,12 +101,32 @@ extension CameraViewController : CameraControllerDelegate {
 
 extension CameraViewController : CameraSettingValueObserver {
     func cameraSetting(setting: String, valueChanged value: AnyObject) {
-//        switch setting {
-//        case CameraControlObservableSettingAdjustingFocus:
-//            <#code#>
-//        default:
-//            <#code#>
-//        }
+        switch setting {
+        case CameraControlObservableSettingAdjustingFocus:
+            if let adjusting = value as? Bool {
+                focusIndicator.hidden = !adjusting
+            }
+            
+        case CameraControlObservableSettingAdjustingWhiteBalance:
+            if let adjusting = value as? Bool {
+                whiteBalanceIndicator.hidden = !adjusting
+            }
+            
+        case CameraControlObservableSettingAdjustingExposure:
+            if let adjusting = value as? Bool {
+                exposureIndicator.hidden = !adjusting
+            }
+            
+        case CameraControlObservableSettingLensPosition,
+             CameraControlObservableSettingExposureTargetOffset,
+             CameraControlObservableSettingExposureDuration,
+             CameraControlObservableSettingISO,
+             CameraControlObservableSettingWBGains:
+            displayCurrentValues()
+            
+        default:
+            break
+        }
     }
 }
 

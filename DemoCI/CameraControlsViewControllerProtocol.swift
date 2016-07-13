@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol CameraControlsViewControllerProtocol : class {
+protocol CameraControlsViewControllerProtocol {
     var cameraController:CameraController? { get set }
 }
