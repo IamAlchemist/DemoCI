@@ -9,4 +9,15 @@
 import UIKit
 
 class ExposureViewController : UIViewController {
+    @IBOutlet weak var autoExposureSwitch: UISwitch!
+    @IBOutlet weak var speedSlider: UISlider!
+    @IBOutlet weak var isoSlider: UISlider!
+    @IBOutlet weak var biasSlider: UISlider!
+    
+    @IBAction func autoExposureChanged(sender: UISwitch) {
+    }
+    
+    @IBAction func sliderChanged(sender: UISlider) {
+    }
+    
 }

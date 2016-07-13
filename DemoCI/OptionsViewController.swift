@@ -9,4 +9,7 @@
 import UIKit
 
 class OptionsViewController: UIViewController {
+    @IBOutlet weak var bracketedCaptureSwitch: UISwitch!
+    @IBAction func switchValueChanged(sender: UISwitch) {
+    }
 }
