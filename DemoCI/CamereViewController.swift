@@ -85,13 +85,6 @@ class CameraViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func shutterButtonTapped(sender: UIButton) {
-        cameraController.captureStillImage { (image, metadata) in
-            self.view.layer.contents = image
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        }
-    }
 }
 
 extension CameraViewController : CameraControllerDelegate {
@@ -103,6 +96,17 @@ extension CameraViewController : CameraControllerDelegate {
         for (idx, face) in faces.enumerate() {
             faceViews[idx].frame = face.frame
         }
+    }
+}
+
+extension CameraViewController : CameraSettingValueObserver {
+    func cameraSetting(setting: String, valueChanged value: AnyObject) {
+//        switch setting {
+//        case CameraControlObservableSettingAdjustingFocus:
+//            <#code#>
+//        default:
+//            <#code#>
+//        }
     }
 }
 
@@ -155,18 +159,42 @@ private extension CameraViewController {
             performSegueWithIdentifier(_segueIdentifier, sender: self)
         }
     }
-}
-
-extension CameraViewController : CameraSettingValueObserver {
-    func cameraSetting(setting: String, valueChanged value: AnyObject) {
-//        switch setting {
-//        case CameraControlObservableSettingAdjustingFocus:
-//            <#code#>
-//        default:
-//            <#code#>
-//        }
+    
+    @IBAction func shutterButtonTapped(sender: UIButton) {
+        cameraController.captureStillImage { (image, metadata) in
+            self.view.layer.contents = image
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+    }
+    
+    func displayCurrentValues() {
+        var currentValuesTextComponents = [String]()
+        
+        if let lensPosition = cameraController.currentLensPosition() {
+            currentValuesTextComponents.append(String(format: "F: %.2f", lensPosition))
+        }
+        
+        if let offset = cameraController.currentExposureTargetOffset() {
+            currentValuesTextComponents.append(String(format: "±: %.2f", offset))
+        }
+        
+        if let speed = cameraController.currentExposureDuration() {
+            currentValuesTextComponents.append(String(format: "S: %.4f", speed))
+        }
+        
+        if let iso = cameraController.currentISO() {
+            currentValuesTextComponents.append(String(format: "ISO: %.0f", iso))
+        }
+        
+        if let temp = cameraController.currentTemperature() {
+            currentValuesTextComponents.append(String(format: "TEMP: %.0f", temp))
+        }
+        
+        if let tint = cameraController.currentTint() {
+            currentValuesTextComponents.append(String(format: "TINT: %.0f", tint))
+        }
+        
+        currentValueLabel.text = currentValuesTextComponents.joinWithSeparator(" - ")
     }
 }
-
-
 
