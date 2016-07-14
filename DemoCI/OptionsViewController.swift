@@ -8,8 +8,20 @@
 
 import UIKit
 
-class OptionsViewController: UIViewController {
+class OptionsViewController: UIViewController, CameraControlsViewControllerProtocol {
     @IBOutlet weak var bracketedCaptureSwitch: UISwitch!
+    
+    var cameraController: CameraController?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let cameraController = cameraController {
+            bracketedCaptureSwitch.on = cameraController.enableBracketedCapture
+        }
+    }
+    
     @IBAction func switchValueChanged(sender: UISwitch) {
+        cameraController?.enableBracketedCapture = sender.on
     }
 }
