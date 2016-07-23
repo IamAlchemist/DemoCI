@@ -200,10 +200,24 @@
                                     <constraint firstAttribute="height" constant="180" id="Oiq-Xj-vIj"/>
                                 </constraints>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZS-vA-LBw">
+                                <rect key="frame" x="0.0" y="0.0" width="32" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="mX7-jx-WkG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <state key="normal" title="   Exit    ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2iG-sp-DYb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="N3L-gu-ppZ" firstAttribute="top" secondItem="hXA-Mb-gLZ" secondAttribute="bottom" id="7cm-CB-LgN"/>
+                            <constraint firstItem="qZS-vA-LBw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AR9-MS-UHS"/>
                             <constraint firstAttribute="trailing" secondItem="CBx-93-tBO" secondAttribute="trailing" id="BxF-vj-N80"/>
                             <constraint firstItem="ebH-Fn-ohb" firstAttribute="bottom" secondItem="N3L-gu-ppZ" secondAttribute="top" id="GLE-F7-pUg"/>
                             <constraint firstItem="N3L-gu-ppZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IU5-Dd-7Gt"/>
@@ -214,6 +228,7 @@
                             <constraint firstItem="ebH-Fn-ohb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cZE-fK-pi0"/>
                             <constraint firstAttribute="trailing" secondItem="N3L-gu-ppZ" secondAttribute="trailing" id="ciL-7b-VNf"/>
                             <constraint firstItem="hXA-Mb-gLZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ndf-tm-8ja"/>
+                            <constraint firstItem="qZS-vA-LBw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tRP-ef-Cge"/>
                             <constraint firstAttribute="trailing" secondItem="ebH-Fn-ohb" secondAttribute="trailing" id="uTi-Q9-lS3"/>
                             <constraint firstAttribute="trailing" secondItem="hXA-Mb-gLZ" secondAttribute="trailing" id="vAf-1i-hEj"/>
                         </constraints>

@@ -131,6 +131,10 @@ extension CameraViewController : CameraSettingValueObserver {
 }
 
 private extension CameraViewController {
+    @IBAction func exit(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func prepareFaceView(diff : Int) {
         if diff > 0 {
             for _ in 0..<diff {
