@@ -25,7 +25,7 @@
                                             <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -40,6 +40,7 @@
                     <navigationItem key="navigationItem" id="MCO-ir-4Sw"/>
                     <connections>
                         <segue destination="Bej-78-mbt" kind="presentation" identifier="CameraSegue" modalTransitionStyle="flipHorizontal" id="ycv-j1-YyZ"/>
+                        <segue destination="rd2-CM-3V7" kind="presentation" identifier="CIFiltersSegue" modalTransitionStyle="flipHorizontal" id="2eL-ab-p7q"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBU-hV-w1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -53,6 +54,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JS5-AT-36u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1614.5" y="152"/>
+        </scene>
+        <!--CIExplorer-->
+        <scene sceneID="fqy-VU-zzu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CIExplorer" id="rd2-CM-3V7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="trP-Ak-6V1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1643.5" y="306"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rt6-S3-AxQ">
