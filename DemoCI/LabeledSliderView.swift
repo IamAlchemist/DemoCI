@@ -64,7 +64,7 @@ class LabeledSliderView: UIView {
         
         slider.snp_makeConstraints { (make) in
             make.height.equalTo(self).multipliedBy(0.5)
-            make.height.equalTo(self)
+            make.width.equalTo(self)
             make.bottom.equalTo(self)
             make.leading.equalTo(self)
         }

@@ -52,7 +52,7 @@ class ParameterAdjustmentView: UIView {
             
             sliderView.snp_makeConstraints(closure: { (make) in
                 make.leading.equalTo(self)
-                make.top.equalTo(self)
+                make.top.equalTo(yOffset)
                 make.width.equalTo(self)
                 make.height.equalTo(kSliderHeight)
             })

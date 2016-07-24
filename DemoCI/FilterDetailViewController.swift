@@ -14,6 +14,7 @@ class FilterDetailViewController: UIViewController {
     var filteredImageView: FilteredImageView!
     var parameterAdjustmentView: ParameterAdjustmentView!
     
+    @IBOutlet weak var containerView: UIView!
     var image: UIImage!
     
     override func viewDidLoad() {
@@ -32,6 +33,19 @@ class FilterDetailViewController: UIViewController {
         addSubviews()
         
         applyConstrains()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        navigationController?.navigationBar.barStyle = .Black
+        tabBarController?.tabBar.barStyle = .Black
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     func filterParamterDescriptors() -> [ScalarFilterParameter] {
@@ -76,17 +90,17 @@ class FilterDetailViewController: UIViewController {
     
     func applyConstrains() {
         filteredImageView.snp_makeConstraints { (make) in
-            make.width.equalTo(view)
-            make.height.equalTo(view).multipliedBy(0.5)
-            make.top.equalTo(view)
-            make.leading.equalTo(view)
+            make.width.equalTo(containerView)
+            make.height.equalTo(containerView).multipliedBy(0.5)
+            make.top.equalTo(containerView)
+            make.leading.equalTo(containerView)
         }
         
         parameterAdjustmentView.snp_makeConstraints { (make) in
-            make.bottom.equalTo(view)
-            make.width.equalTo(view)
-            make.height.equalTo(view).multipliedBy(0.5)
-            make.leading.equalTo(view)
+            make.width.equalTo(containerView)
+            make.height.equalTo(containerView).multipliedBy(0.5)
+            make.leading.equalTo(containerView)
+            make.bottom.equalTo(containerView)
         }
     }
 }
