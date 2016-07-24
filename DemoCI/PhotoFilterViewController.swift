@@ -34,7 +34,13 @@ class PhotoFilterViewController: UIViewController {
             filters.append(CIFilter(name: descriptor.filtername)!)
         }
         
-        filteredImageView.inputImage = UIImage(named: "duckling")
+        var image = UIImage(named: "duckling")!
+        UIGraphicsBeginImageContextWithOptions(image.size, true, 0)
+        image.drawAtPoint(CGPointZero)
+        image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        filteredImageView.inputImage = image
         filteredImageView.contentMode = .ScaleAspectFit
         filteredImageView.filter = filters[0]
     }
