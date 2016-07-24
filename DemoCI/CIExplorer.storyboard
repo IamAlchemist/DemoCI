@@ -5,26 +5,65 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="g7K-Ne-Ojs">
+        <!--Core Image Filters-->
+        <scene sceneID="kt2-nO-Tsg">
             <objects>
-                <viewController id="LCb-L6-8g0" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eSZ-6M-43h"/>
-                        <viewControllerLayoutGuide type="bottom" id="ru9-u1-p0f"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9gL-eA-mVI">
+                <tableViewController title="Core Image Filters" id="b3k-GT-v2w" customClass="FilterListViewController" customModule="DemoCI" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dVJ-Xs-v6R">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="dms-qW-I2z">
-                        <barButtonItem key="leftBarButtonItem" title="back" id="Tc4-Tm-Ggt"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1xY-CD-zBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SystemFilterCell" textLabel="9F1-L5-UMc" style="IBUITableViewCellStyleDefault" id="opj-Xc-UQO">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="opj-Xc-UQO" id="QlK-Nu-rNX">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9F1-L5-UMc">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="iGr-hX-xJr" kind="show" identifier="showDetail" id="T0m-0A-vyH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="b3k-GT-v2w" id="24k-XO-f2q"/>
+                            <outlet property="delegate" destination="b3k-GT-v2w" id="4QK-R4-3Og"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Core Image Filters" id="h0z-2V-dap"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DEy-FA-nIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1758" y="751"/>
+        </scene>
+        <!--Some Filter-->
+        <scene sceneID="Sjk-e3-Rfj">
+            <objects>
+                <viewController id="iGr-hX-xJr" customClass="FilterDetailViewController" customModule="DemoCI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FAr-qy-caF"/>
+                        <viewControllerLayoutGuide type="bottom" id="LTq-gc-PGB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vwb-CV-DB4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Some Filter" id="KJh-6P-FfQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7u-cf-V3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2474" y="751"/>
         </scene>
         <!--Photo Filter View Controller-->
         <scene sceneID="JJM-Ci-t4g">
@@ -120,7 +159,7 @@
         <scene sceneID="Fgb-mm-cHQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xym-2S-Bl8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="iW8-Ih-6hy"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="photos-icon" id="iW8-Ih-6hy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5qM-1Q-TC0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -139,7 +178,7 @@
         <scene sceneID="1M1-5D-Cus">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="49F-Iz-T50" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="NGF-Iv-caj"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" image="filter-icon" id="NGF-Iv-caj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EbI-Md-idI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -147,7 +186,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LCb-L6-8g0" kind="relationship" relationship="rootViewController" id="1eV-6D-1gC"/>
+                        <segue destination="b3k-GT-v2w" kind="relationship" relationship="rootViewController" id="2cU-h6-FfQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xjy-lP-mMR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,4 +194,8 @@
             <point key="canvasLocation" x="946" y="751"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="filter-icon" width="30" height="30"/>
+        <image name="photos-icon" width="30" height="30"/>
+    </resources>
 </document>

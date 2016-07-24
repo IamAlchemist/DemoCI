@@ -18,6 +18,9 @@
 		64A266F61D44337700C24275 /* ScalarFilterParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A266F51D44337700C24275 /* ScalarFilterParameter.swift */; };
 		64A266F81D4434C700C24275 /* LabeledSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A266F71D4434C700C24275 /* LabeledSliderView.swift */; };
 		64A266FA1D44403E00C24275 /* PhotoFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A266F91D44403E00C24275 /* PhotoFilterViewController.swift */; };
+		64A266FC1D44527300C24275 /* FilterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A266FB1D44527300C24275 /* FilterListViewController.swift */; };
+		64A266FE1D44564700C24275 /* FilterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A266FD1D44564700C24275 /* FilterDetailViewController.swift */; };
+		64A267061D447FDF00C24275 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A266FF1D446BB100C24275 /* SnapKit.framework */; };
 		64C3E7A41D436A02009D410D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64C3E7A31D436A02009D410D /* Main.storyboard */; };
 		64C3E7A61D436A9C009D410D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C3E7A51D436A9C009D410D /* MenuViewController.swift */; };
 		64C3E7A81D43819B009D410D /* CIExplorer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64C3E7A71D43819B009D410D /* CIExplorer.storyboard */; };
@@ -51,6 +54,9 @@
 		64A266F51D44337700C24275 /* ScalarFilterParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalarFilterParameter.swift; sourceTree = "<group>"; };
 		64A266F71D4434C700C24275 /* LabeledSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabeledSliderView.swift; sourceTree = "<group>"; };
 		64A266F91D44403E00C24275 /* PhotoFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFilterViewController.swift; sourceTree = "<group>"; };
+		64A266FB1D44527300C24275 /* FilterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListViewController.swift; sourceTree = "<group>"; };
+		64A266FD1D44564700C24275 /* FilterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDetailViewController.swift; sourceTree = "<group>"; };
+		64A266FF1D446BB100C24275 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		64C3E7A31D436A02009D410D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		64C3E7A51D436A9C009D410D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		64C3E7A71D43819B009D410D /* CIExplorer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CIExplorer.storyboard; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A267061D447FDF00C24275 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,10 +93,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64A267011D446BDE00C24275 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64A266FF1D446BB100C24275 /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		64C3E7A91D4381A3009D410D /* CIExplorer */ = {
 			isa = PBXGroup;
 			children = (
 				64C3E7A71D43819B009D410D /* CIExplorer.storyboard */,
+				64A266FB1D44527300C24275 /* FilterListViewController.swift */,
+				64A266FD1D44564700C24275 /* FilterDetailViewController.swift */,
 				64A266F31D4432E800C24275 /* ParameterAdjustmentView.swift */,
 				64A266F51D44337700C24275 /* ScalarFilterParameter.swift */,
 				64A266F71D4434C700C24275 /* LabeledSliderView.swift */,
@@ -112,6 +129,7 @@
 		722191CE1CFC1D75009B4AF1 = {
 			isa = PBXGroup;
 			children = (
+				64A267011D446BDE00C24275 /* Frameworks */,
 				722191D91CFC1D75009B4AF1 /* DemoCI */,
 				722191D81CFC1D75009B4AF1 /* Products */,
 			);
@@ -168,6 +186,7 @@
 				722191D31CFC1D75009B4AF1 /* Sources */,
 				722191D41CFC1D75009B4AF1 /* Frameworks */,
 				722191D51CFC1D75009B4AF1 /* Resources */,
+				64A267071D44801400C24275 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -256,6 +275,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		64A267071D44801400C24275 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		722191D31CFC1D75009B4AF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -267,12 +303,14 @@
 				6433F3931D34B69600F0D72F /* OptionsViewController.swift in Sources */,
 				64C3E7A61D436A9C009D410D /* MenuViewController.swift in Sources */,
 				64A266F21D4397BA00C24275 /* FilteredImageView.swift in Sources */,
+				64A266FE1D44564700C24275 /* FilterDetailViewController.swift in Sources */,
 				722191ED1CFC1F09009B4AF1 /* GLViewController.swift in Sources */,
 				64A266F41D4432E800C24275 /* ParameterAdjustmentView.swift in Sources */,
 				722191DD1CFC1D75009B4AF1 /* CamereViewController.swift in Sources */,
 				64A266F81D4434C700C24275 /* LabeledSliderView.swift in Sources */,
 				6433F38D1D34B62C00F0D72F /* ExposureViewController.swift in Sources */,
 				643809B01D34FCD9004638C9 /* CameraControlsViewControllerProtocol.swift in Sources */,
+				64A266FC1D44527300C24275 /* FilterListViewController.swift in Sources */,
 				64C3E7AC1D439591009D410D /* PhotoFilterCollectionViewCell.swift in Sources */,
 				722191F01CFC2094009B4AF1 /* CameraController.swift in Sources */,
 				64A266F61D44337700C24275 /* ScalarFilterParameter.swift in Sources */,
@@ -400,6 +438,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DemoCI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.kauhaus.hulk.DemoCI;
@@ -411,6 +453,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DemoCI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.kauhaus.hulk.DemoCI;
