@@ -83,7 +83,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7Ew-Lw-sN6">
-                        <barButtonItem key="leftBarButtonItem" title="back" id="LIK-VJ-aWb"/>
+                        <barButtonItem key="leftBarButtonItem" title="back" id="LIK-VJ-aWb">
+                            <connections>
+                                <action selector="exit:" destination="AWu-px-igO" id="c3O-MQ-7nw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="filteredImageView" destination="wZj-Fm-xHU" id="qAu-h6-Qxu"/>

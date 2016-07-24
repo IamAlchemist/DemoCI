@@ -52,6 +52,10 @@ class PhotoFilterViewController: UIViewController {
         navigationController?.navigationBar.barStyle = .Black
         tabBarController?.tabBar.barStyle = .Black
     }
+    
+    @IBAction func exit(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 
 extension PhotoFilterViewController: UICollectionViewDataSource {
