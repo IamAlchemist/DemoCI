@@ -93,13 +93,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		64736BBD1D562B9C000E4572 /* AutoLayout */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = AutoLayout;
-			sourceTree = "<group>";
-		};
 		64A267011D446BDE00C24275 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +147,6 @@
 		722191D91CFC1D75009B4AF1 /* DemoCI */ = {
 			isa = PBXGroup;
 			children = (
-				64736BBD1D562B9C000E4572 /* AutoLayout */,
 				722191DA1CFC1D75009B4AF1 /* AppDelegate.swift */,
 				64C3E7AA1D4381AF009D410D /* Menu */,
 				64C3E7A91D4381A3009D410D /* CIExplorer */,
