@@ -89,14 +89,14 @@ class FilterDetailViewController: UIViewController {
     }
     
     func applyConstrains() {
-        filteredImageView.snp_makeConstraints { (make) in
+        filteredImageView.snp.makeConstraints { (make) in
             make.width.equalTo(containerView)
             make.height.equalTo(containerView).multipliedBy(0.5)
             make.top.equalTo(containerView)
             make.leading.equalTo(containerView)
         }
         
-        parameterAdjustmentView.snp_makeConstraints { (make) in
+        parameterAdjustmentView.snp.makeConstraints { (make) in
             make.width.equalTo(containerView)
             make.height.equalTo(containerView).multipliedBy(0.5)
             make.leading.equalTo(containerView)

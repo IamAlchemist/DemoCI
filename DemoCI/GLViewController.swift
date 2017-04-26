@@ -29,7 +29,7 @@ class GLViewController : UIViewController {
         
         glView.context = glContext
         
-        glView.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+        glView.transform = CGAffineTransform(rotationAngle: .pi/2)
         
         if let window = glView.window {
             glView.frame = window.bounds

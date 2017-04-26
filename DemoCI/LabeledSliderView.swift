@@ -62,21 +62,21 @@ class LabeledSliderView: UIView {
     
     func applyConstraints() {
         
-        slider.snp_makeConstraints { (make) in
+        slider.snp.makeConstraints { (make) in
             make.height.equalTo(self).multipliedBy(0.5)
             make.width.equalTo(self)
             make.bottom.equalTo(self)
             make.leading.equalTo(self)
         }
         
-        descriptionLabel.snp_makeConstraints { (make) in
+        descriptionLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self)
             make.height.equalTo(self).multipliedBy(0.5)
             make.width.equalTo(self)
             make.leading.equalTo(self)
         }
         
-        valueLabel.snp_makeConstraints { (make) in
+        valueLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self)
             make.height.equalTo(self).multipliedBy(0.5)
             make.width.equalTo(self)

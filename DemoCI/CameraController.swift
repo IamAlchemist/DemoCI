@@ -382,7 +382,7 @@ class CameraController: NSObject {
                     }
                 }
                 else {
-                    print("error while capturing still image: \(error)")
+                    print("error while capturing still image: \(String(describing: error))")
                 }
             }
         }
@@ -394,7 +394,7 @@ class CameraController: NSObject {
             let connection = self.stillCameraOutput.connection(withMediaType: AVMediaTypeVideo)
             connection?.videoOrientation = AVCaptureVideoOrientation(rawValue: UIDevice.current.orientation.rawValue)!
             
-            let settings = [-1.0, 0.0, 1.0].map { bias in
+            let settings : [Any] = [-1.0, 0.0, 1.0].map { bias in
                 AVCaptureAutoExposureBracketedStillImageSettings.autoExposureSettings(withExposureTargetBias: bias)
             }
             
@@ -416,7 +416,7 @@ class CameraController: NSObject {
                     }
                 }
                 else {
-                    NSLog("error while capturing still image: \(error)")
+                    NSLog("error while capturing still image: \(String(describing: error))")
                 }
             })
         }
@@ -568,7 +568,7 @@ private extension CameraController {
             } catch let error1 as NSError {
                 error = error1
                 possibleCameraInput = nil
-                print("\(error)")
+                print("\(String(describing: error))")
             } catch {
                 fatalError()
             }
