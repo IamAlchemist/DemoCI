@@ -39,11 +39,11 @@ class LabeledSliderView: UIView {
         
         addSubview(slider)
         
-        slider.addTarget(self, action: #selector(sliderTouchUpInside(_:)), forControlEvents: .TouchUpInside)
-        slider.addTarget(self, action: #selector(sliderValueDidChange(_:)), forControlEvents: .ValueChanged)
+        slider.addTarget(self, action: #selector(sliderTouchUpInside(_:)), for: .touchUpInside)
+        slider.addTarget(self, action: #selector(sliderValueDidChange(_:)), for: .valueChanged)
         
         descriptionLabel = UILabel(frame: frame)
-        descriptionLabel.font = UIFont.boldSystemFontOfSize(14)
+        descriptionLabel.font = UIFont.boldSystemFont(ofSize: 14)
         descriptionLabel.textColor = UIColor(white: 0.9, alpha: 1.0)
         descriptionLabel.text = parameter.name
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -51,9 +51,9 @@ class LabeledSliderView: UIView {
         addSubview(descriptionLabel)
         
         valueLabel = UILabel(frame: frame)
-        valueLabel.font = UIFont.systemFontOfSize(14)
+        valueLabel.font = UIFont.systemFont(ofSize: 14)
         valueLabel.textColor = UIColor(white: 0.9, alpha: 1.0)
-        valueLabel.textAlignment = .Right
+        valueLabel.textAlignment = .right
         valueLabel.text = slider.value.description
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -84,11 +84,11 @@ class LabeledSliderView: UIView {
         }
     }
     
-    func sliderValueDidChange(sender: AnyObject?) {
+    func sliderValueDidChange(_ sender: AnyObject?) {
         valueLabel.text = String(format: "%0.2f", slider.value)
     }
     
-    func sliderTouchUpInside(sender: AnyObject?) {
+    func sliderTouchUpInside(_ sender: AnyObject?) {
         if delegate != nil {
             delegate!.parameterValueDidChange(ScalarFilterParameter(key: parameter.key, value: slider.value))
         }

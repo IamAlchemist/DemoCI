@@ -36,37 +36,37 @@ class PhotoFilterViewController: UIViewController {
         
         var image = UIImage(named: "duckling")!
         UIGraphicsBeginImageContextWithOptions(image.size, true, 0)
-        image.drawAtPoint(CGPointZero)
-        image = UIGraphicsGetImageFromCurrentImageContext()
+        image.draw(at: CGPoint.zero)
+        image = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
         filteredImageView.inputImage = image
-        filteredImageView.contentMode = .ScaleAspectFit
+        filteredImageView.contentMode = .scaleAspectFit
         filteredImageView.filter = filters[0]
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
-        navigationController?.navigationBar.barStyle = .Black
-        tabBarController?.tabBar.barStyle = .Black
+        UIApplication.shared.statusBarStyle = .lightContent
+        navigationController?.navigationBar.barStyle = .black
+        tabBarController?.tabBar.barStyle = .black
     }
     
-    @IBAction func exit(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func exit(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
 extension PhotoFilterViewController: UICollectionViewDataSource {
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filterDescriptiors.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoFilterCell", forIndexPath: indexPath) as! PhotoFilterCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoFilterCell", for: indexPath) as! PhotoFilterCollectionViewCell
         
-        cell.filteredImageView.contentMode = .ScaleAspectFill
+        cell.filteredImageView.contentMode = .scaleAspectFill
         cell.filteredImageView.inputImage = filteredImageView.inputImage
         cell.filteredImageView.filter = filters[indexPath.item]
         cell.filterNameLabel.text = filterDescriptiors[indexPath.item].filterDisplayName
@@ -76,7 +76,7 @@ extension PhotoFilterViewController: UICollectionViewDataSource {
 }
 
 extension PhotoFilterViewController: UICollectionViewDelegate {
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         filteredImageView.filter = filters[indexPath.item]
     }
 }

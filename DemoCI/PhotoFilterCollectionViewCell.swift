@@ -30,25 +30,25 @@ class PhotoFilterCollectionViewCell: UICollectionViewCell {
         addSubviews()
     }
     
-    override func intrinsicContentSize() -> CGSize {
-        return CGSizeMake(kCellWidth, kCellWidth + kLabelHeight)
+    override var intrinsicContentSize : CGSize {
+        return CGSize(width: kCellWidth, height: kCellWidth + kLabelHeight)
     }
     
     func addSubviews() {
-        filteredImageView.layer.borderColor = tintColor.CGColor
+        filteredImageView.layer.borderColor = tintColor.cgColor
         contentView.addSubview(filteredImageView)
         
-        filterNameLabel.textAlignment = .Center
+        filterNameLabel.textAlignment = .center
         filterNameLabel.textColor = UIColor(white: 0.9, alpha: 1.0)
         filterNameLabel.highlightedTextColor = tintColor
-        filterNameLabel.font = UIFont.systemFontOfSize(12)
+        filterNameLabel.font = UIFont.systemFont(ofSize: 12)
         
         contentView.addSubview(filterNameLabel)
     }
     
-    override var selected: Bool {
+    override var isSelected: Bool {
         didSet {
-            filteredImageView.layer.borderWidth = selected ? 2 : 0
+            filteredImageView.layer.borderWidth = isSelected ? 2 : 0
         }
     }
 }

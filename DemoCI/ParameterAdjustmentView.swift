@@ -13,14 +13,14 @@ let kSliderMarginY: CGFloat = 8
 let kSliderHeight: CGFloat = 48
 
 protocol ParameterAdjustmentDelegate {
-    func parameterValueDidChange(param: ScalarFilterParameter)
+    func parameterValueDidChange(_ param: ScalarFilterParameter)
 }
 
 class ParameterAdjustmentView: UIView {
     var parameters: [ScalarFilterParameter]!
     var sliderViews = [LabeledSliderView]()
     
-    func setAdjustmentDelegate(delegate: ParameterAdjustmentDelegate) {
+    func setAdjustmentDelegate(_ delegate: ParameterAdjustmentDelegate) {
         for sliderView in sliderViews {
             sliderView.delegate = delegate
         }
@@ -50,7 +50,7 @@ class ParameterAdjustmentView: UIView {
             
             sliderViews.append(sliderView)
             
-            sliderView.snp_makeConstraints(closure: { (make) in
+            sliderView.snp.makeConstraints({ (make) in
                 make.leading.equalTo(self)
                 make.top.equalTo(yOffset)
                 make.width.equalTo(self)

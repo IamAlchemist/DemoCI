@@ -31,8 +31,8 @@ class CameraViewController: UIViewController {
     
     var cameraController : CameraController!
     
-    private var currentControlsViewController : UIViewController?
-    private var faceViews = [UIView]()
+    fileprivate var currentControlsViewController : UIViewController?
+    fileprivate var faceViews = [UIView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +53,7 @@ class CameraViewController: UIViewController {
         cameraController.registerObserver(self, property: CameraControlObservableSettingWBGains)
         
         
-        focusButton.selected = true
+        focusButton.isSelected = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -63,22 +63,22 @@ class CameraViewController: UIViewController {
         previewLayer.frame = videoPreviewView.bounds
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         cameraController.startRunning()
     }
 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controlsSegue = segue as? ControlsSegue {
             controlsSegue.currentViewController = currentControlsViewController
             controlsSegue.hostView = controlsView
             
-            currentControlsViewController = controlsSegue.destinationViewController
+            currentControlsViewController = controlsSegue.destination
             
             if var currentControlsViewController = currentControlsViewController as? CameraControlsViewControllerProtocol {
                 currentControlsViewController.cameraController = cameraController
@@ -88,33 +88,33 @@ class CameraViewController: UIViewController {
 }
 
 extension CameraViewController : CameraControllerDelegate {
-    func cameraContorller(cameraController: CameraController, didOutputImage image: CIImage) {
+    func cameraContorller(_ cameraController: CameraController, didOutputImage image: CIImage) {
     }
     
-    func cameraController(cameraController: CameraController, didDetectFaces faces: Array<(id: Int, frame: CGRect)>) {
+    func cameraController(_ cameraController: CameraController, didDetectFaces faces: Array<(id: Int, frame: CGRect)>) {
         prepareFaceView(faces.count - faceViews.count)
-        for (idx, face) in faces.enumerate() {
+        for (idx, face) in faces.enumerated() {
             faceViews[idx].frame = face.frame
         }
     }
 }
 
 extension CameraViewController : CameraSettingValueObserver {
-    func cameraSetting(setting: String, valueChanged value: AnyObject) {
+    func cameraSetting(_ setting: String, valueChanged value: AnyObject) {
         switch setting {
         case CameraControlObservableSettingAdjustingFocus:
             if let adjusting = value as? Bool {
-                focusIndicator.hidden = !adjusting
+                focusIndicator.isHidden = !adjusting
             }
             
         case CameraControlObservableSettingAdjustingWhiteBalance:
             if let adjusting = value as? Bool {
-                whiteBalanceIndicator.hidden = !adjusting
+                whiteBalanceIndicator.isHidden = !adjusting
             }
             
         case CameraControlObservableSettingAdjustingExposure:
             if let adjusting = value as? Bool {
-                exposureIndicator.hidden = !adjusting
+                exposureIndicator.isHidden = !adjusting
             }
             
         case CameraControlObservableSettingLensPosition,
@@ -131,16 +131,16 @@ extension CameraViewController : CameraSettingValueObserver {
 }
 
 private extension CameraViewController {
-    @IBAction func exit(sender: UIButton) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func exit(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
-    func prepareFaceView(diff : Int) {
+    func prepareFaceView(_ diff : Int) {
         if diff > 0 {
             for _ in 0..<diff {
-                let faceView = UIView(frame: CGRectZero)
-                faceView.backgroundColor = UIColor.clearColor()
-                faceView.layer.borderColor = UIColor.yellowColor().CGColor
+                let faceView = UIView(frame: CGRect.zero)
+                faceView.backgroundColor = UIColor.clear
+                faceView.layer.borderColor = UIColor.yellow.cgColor
                 faceView.layer.borderWidth = 1.0
                 
                 facesView.addSubview(faceView)
@@ -150,18 +150,18 @@ private extension CameraViewController {
         else {
             for _ in 0..<abs(diff) {
                 faceViews[0].removeFromSuperview()
-                faceViews.removeAtIndex(0)
+                faceViews.remove(at: 0)
             }
         }
     }
 
-    @IBAction func toggoleControls(sender: UIButton) {
-        if sender.selected {
-            sender.selected = false
-            controlsView.hidden = true
+    @IBAction func toggoleControls(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            controlsView.isHidden = true
         }
         else {
-            controlsView.hidden = false
+            controlsView.isHidden = false
             var segueIdentifier : String?
             switch sender {
             case focusButton:
@@ -176,24 +176,24 @@ private extension CameraViewController {
             }
             
             for button in [focusButton, exposureButton, whiteBalanceButton, optionsButton] {
-                button.selected = button == sender
+                button?.isSelected = button == sender
             }
             
             guard let _segueIdentifier = segueIdentifier else { return }
-            performSegueWithIdentifier(_segueIdentifier, sender: self)
+            performSegue(withIdentifier: _segueIdentifier, sender: self)
         }
     }
     
-    @IBAction func shutterButtonTapped(sender: UIButton) {
+    @IBAction func shutterButtonTapped(_ sender: UIButton) {
         cameraController.captureStillImage { (image, metadata) in
             self.view.layer.contents = image
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
     }
     
-    @IBAction func focusOnPointOfInterest(sender: UITapGestureRecognizer) {
-        if sender.state == .Ended {
-            let point = sender.locationInView(sender.view)
+    @IBAction func focusOnPointOfInterest(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            let point = sender.location(in: sender.view)
             cameraController.lockFocusAtPointOfInterest(point)
         }
         
@@ -226,7 +226,7 @@ private extension CameraViewController {
             currentValuesTextComponents.append(String(format: "TINT: %.0f", tint))
         }
         
-        currentValueLabel.text = currentValuesTextComponents.joinWithSeparator(" - ")
+        currentValueLabel.text = currentValuesTextComponents.joined(separator: " - ")
     }
 }
 

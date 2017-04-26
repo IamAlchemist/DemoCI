@@ -18,18 +18,18 @@ class MenuViewController: UITableViewController {
         tableView.dataSource = datasource
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 
 }
 
 extension MenuViewController {
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier(targetSegueAtIndexPath(indexPath), sender: self)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: targetSegueAtIndexPath(indexPath), sender: self)
     }
     
-    func targetSegueAtIndexPath(indexPath : NSIndexPath) -> String {
+    func targetSegueAtIndexPath(_ indexPath : IndexPath) -> String {
         return datasource.titles[indexPath.row] + "Segue"
     }
 }
@@ -39,13 +39,13 @@ class MenuDataSource : NSObject, UITableViewDataSource {
     let titles = ["Camera",
                   "CIFilters"];
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MenuCell", forIndexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
         cell.textLabel?.text = titles[indexPath.item]
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles.count
     }
 }

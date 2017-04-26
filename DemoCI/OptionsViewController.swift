@@ -17,11 +17,11 @@ class OptionsViewController: UIViewController, CameraControlsViewControllerProto
         super.viewDidLoad()
         
         if let cameraController = cameraController {
-            bracketedCaptureSwitch.on = cameraController.enableBracketedCapture
+            bracketedCaptureSwitch.isOn = cameraController.enableBracketedCapture
         }
     }
     
-    @IBAction func switchValueChanged(sender: UISwitch) {
-        cameraController?.enableBracketedCapture = sender.on
+    @IBAction func switchValueChanged(_ sender: UISwitch) {
+        cameraController?.enableBracketedCapture = sender.isOn
     }
 }

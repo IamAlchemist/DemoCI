@@ -14,57 +14,57 @@ import OpenGLES
 class GLViewController : UIViewController {
     var cameraController : CameraController!
     
-    private var glContext : EAGLContext!
-    private var ciContext : CIContext!
-    private var renderBuffer : GLuint = GLuint()
+    fileprivate var glContext : EAGLContext!
+    fileprivate var ciContext : CIContext!
+    fileprivate var renderBuffer : GLuint = GLuint()
     
-    private var glView : GLKView {
+    fileprivate var glView : GLKView {
         return view as! GLKView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        glContext = EAGLContext(API: .OpenGLES2)
+        glContext = EAGLContext(api: .openGLES2)
         
         glView.context = glContext
         
-        glView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+        glView.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
         
         if let window = glView.window {
             glView.frame = window.bounds
         }
         
-        ciContext = CIContext(EAGLContext: glContext)
+        ciContext = CIContext(eaglContext: glContext)
         
-        cameraController = CameraController(previewType: .Manual, delegate: self)
+        cameraController = CameraController(previewType: .manual, delegate: self)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         cameraController.startRunning()
     }
 }
 
 extension GLViewController : CameraControllerDelegate {
-    func cameraController(cameraController: CameraController, didDetectFaces faces: Array<(id: Int, frame: CGRect)>) {
+    func cameraController(_ cameraController: CameraController, didDetectFaces faces: Array<(id: Int, frame: CGRect)>) {
     }
     
-    func cameraContorller(cameraController: CameraController, didOutputImage image: CIImage) {
-        if glContext != EAGLContext.currentContext() {
-            EAGLContext.setCurrentContext(glContext)
+    func cameraContorller(_ cameraController: CameraController, didOutputImage image: CIImage) {
+        if glContext != EAGLContext.current() {
+            EAGLContext.setCurrent(glContext)
         }
         
         glView.bindDrawable()
         
         let rect = aspectFillRectForImageExtent(view.bounds.size, extentSize: image.extent.size)
-        ciContext.drawImage(image, inRect: rect, fromRect: image.extent)
+        ciContext.draw(image, in: rect, from: image.extent)
         
         glView.display()
     }
     
-    func aspectFillRectForImageExtent(boundsSize: CGSize, extentSize: CGSize) -> CGRect {
-        let destSize = CGSize(width: boundsSize.width * UIScreen.mainScreen().scale, height: boundsSize.height * UIScreen.mainScreen().scale)
+    func aspectFillRectForImageExtent(_ boundsSize: CGSize, extentSize: CGSize) -> CGRect {
+        let destSize = CGSize(width: boundsSize.width * UIScreen.main.scale, height: boundsSize.height * UIScreen.main.scale)
         let scaleWidth = destSize.width / extentSize.width
         let scaleHeight = destSize.height / extentSize.height
         let maxScale = max(scaleWidth, scaleHeight)

@@ -29,10 +29,10 @@ class FocusViewController : UIViewController, CameraControlsViewControllerProtoc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if isViewLoaded() && cameraController != nil {
+        if isViewLoaded && cameraController != nil {
             if let autoFocus = cameraController?.isContinuousAutoFocusEnabled() {
-                autoFocusSwitch.on = autoFocus
-                lensPositionSlider.enabled = !autoFocus
+                autoFocusSwitch.isOn = autoFocus
+                lensPositionSlider.isEnabled = !autoFocus
             }
             
             if let currentLensPositon = cameraController?.currentLensPosition() {
@@ -41,23 +41,23 @@ class FocusViewController : UIViewController, CameraControlsViewControllerProtoc
         }
     }
     
-    @IBAction func modeSwitchValueChanged(sender: UISwitch) {
-        if sender.on {
+    @IBAction func modeSwitchValueChanged(_ sender: UISwitch) {
+        if sender.isOn {
             cameraController?.enableContinuousAutoFocus()
         }
         else {
             cameraController?.lockFocusAtLensPosition(CGFloat(lensPositionSlider.value))
         }
-        lensPositionSlider.enabled = !sender.on
+        lensPositionSlider.isEnabled = !sender.isOn
     }
     
-    @IBAction func lensPositionValueChanged(sender: UISlider) {
+    @IBAction func lensPositionValueChanged(_ sender: UISlider) {
         cameraController?.lockFocusAtLensPosition(CGFloat(sender.value))
     }
 }
 
 extension FocusViewController : CameraSettingValueObserver {
-    func cameraSetting(setting: String, valueChanged value: AnyObject) {
+    func cameraSetting(_ setting: String, valueChanged value: AnyObject) {
         if case setting = CameraControlObservableSettingLensPosition {
             if let lenPosition = value as? Float {
                 lensPositionSlider.value = lenPosition

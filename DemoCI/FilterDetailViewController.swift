@@ -26,7 +26,7 @@ class FilterDetailViewController: UIViewController {
         
         image = UIImage(named: "duckling")
         UIGraphicsBeginImageContextWithOptions(image.size, true, 0)
-        image.drawAtPoint(CGPointZero)
+        image.draw(at: CGPoint.zero)
         image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -35,16 +35,16 @@ class FilterDetailViewController: UIViewController {
         applyConstrains()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
-        navigationController?.navigationBar.barStyle = .Black
-        tabBarController?.tabBar.barStyle = .Black
+        UIApplication.shared.statusBarStyle = .lightContent
+        navigationController?.navigationBar.barStyle = .black
+        tabBarController?.tabBar.barStyle = .black
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
@@ -58,7 +58,7 @@ class FilterDetailViewController: UIViewController {
         return inputNames.map { (inputName) -> ScalarFilterParameter in
             let attribute = attributes[inputName] as! [String: AnyObject]
             
-            let displayName = inputName[inputName.startIndex.advancedBy(5)..<inputName.endIndex]
+            let displayName = inputName[inputName.characters.index(inputName.startIndex, offsetBy: 5)..<inputName.endIndex]
             let minValue = attribute[kCIAttributeSliderMin] as! Float
             let maxValue = attribute[kCIAttributeSliderMax] as! Float
             let defaultValue = attribute[kCIAttributeDefault] as! Float
@@ -75,7 +75,7 @@ class FilterDetailViewController: UIViewController {
         filteredImageView = FilteredImageView(frame: view.bounds)
         filteredImageView.inputImage = image
         filteredImageView.filter = filter
-        filteredImageView.contentMode = .ScaleAspectFit
+        filteredImageView.contentMode = .scaleAspectFit
         filteredImageView.clipsToBounds = true
         filteredImageView.backgroundColor = view.backgroundColor
         filteredImageView.translatesAutoresizingMaskIntoConstraints = false

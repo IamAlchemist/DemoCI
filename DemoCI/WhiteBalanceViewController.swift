@@ -30,9 +30,9 @@ class WhiteBalanceViewController : UIViewController, CameraControlsViewControlle
         super.viewDidLoad()
         
         if let autoWB = cameraController?.isContinuousAutoWhiteBalanceEnabled() {
-            autoWhiteSwitch.on = autoWB
-            temperatureSlider.enabled = !autoWB
-            tintSlider.enabled = !autoWB
+            autoWhiteSwitch.isOn = autoWB
+            temperatureSlider.isEnabled = !autoWB
+            tintSlider.isEnabled = !autoWB
         }
         
         if let currentTemperature = cameraController?.currentTemperature() {
@@ -44,11 +44,11 @@ class WhiteBalanceViewController : UIViewController, CameraControlsViewControlle
         }
     }
     
-    @IBAction func autoWBChanged(sender: UISwitch) {
-        temperatureSlider.enabled = !sender.on
-        tintSlider.enabled = !sender.on
+    @IBAction func autoWBChanged(_ sender: UISwitch) {
+        temperatureSlider.isEnabled = !sender.isOn
+        tintSlider.isEnabled = !sender.isOn
         
-        if autoWhiteSwitch.on {
+        if autoWhiteSwitch.isOn {
             cameraController?.enableContinuousAutoWhiteBalance()
         }
         else {
@@ -57,7 +57,7 @@ class WhiteBalanceViewController : UIViewController, CameraControlsViewControlle
         }
     }
     
-    @IBAction func sliderValueChanged(sender: UISlider) {
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
         switch sender {
         case temperatureSlider:
             cameraController?.setCustomWhiteBalanceWithTemperature(sender.value)
@@ -70,7 +70,7 @@ class WhiteBalanceViewController : UIViewController, CameraControlsViewControlle
 }
 
 extension WhiteBalanceViewController : CameraSettingValueObserver {
-    func cameraSetting(setting: String, valueChanged value: AnyObject) {
+    func cameraSetting(_ setting: String, valueChanged value: AnyObject) {
         if setting == CameraControlObservableSettingWBGains {
             if let wbValues = value as? WhiteBalanceValues {
                 temperatureSlider.value = wbValues.temperature

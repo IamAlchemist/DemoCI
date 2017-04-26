@@ -35,9 +35,9 @@ class ExposureViewController : UIViewController, CameraControlsViewControllerPro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if isViewLoaded() && cameraController != nil {
+        if isViewLoaded && cameraController != nil {
             if let autoExposure = cameraController?.isContinuousAutoFocusEnabled() {
-                autoExposureSwitch.on = autoExposure
+                autoExposureSwitch.isOn = autoExposure
                 updateSliders()
             }
             
@@ -55,8 +55,8 @@ class ExposureViewController : UIViewController, CameraControlsViewControllerPro
         }
     }
     
-    @IBAction func autoExposureChanged(sender: UISwitch) {
-        if sender.on {
+    @IBAction func autoExposureChanged(_ sender: UISwitch) {
+        if sender.isOn {
             cameraController?.enableContinuousAutoExposure()
         }
         else {
@@ -66,7 +66,7 @@ class ExposureViewController : UIViewController, CameraControlsViewControllerPro
         updateSliders()
     }
     
-    @IBAction func sliderChanged(sender: UISlider) {
+    @IBAction func sliderChanged(_ sender: UISlider) {
         switch sender {
         case biasSlider:
             cameraController?.setExposureTargetBias(sender.value)
@@ -83,16 +83,16 @@ class ExposureViewController : UIViewController, CameraControlsViewControllerPro
 private extension ExposureViewController {
     func updateSliders() {
         for slider in [speedSlider, isoSlider] as [UISlider] {
-            slider.enabled = !autoExposureSwitch.on
+            slider.isEnabled = !autoExposureSwitch.isOn
         }
     }
 }
 
 extension ExposureViewController : CameraSettingValueObserver {
-    func cameraSetting(setting: String, valueChanged value: AnyObject) {
+    func cameraSetting(_ setting: String, valueChanged value: AnyObject) {
         if setting == CameraControlObservableSettingExposureDuration {
             if let durationValue = value as? NSValue {
-                let duration = CMTimeGetSeconds(durationValue.CMTimeValue)
+                let duration = CMTimeGetSeconds(durationValue.timeValue)
                 speedSlider.value = Float(duration)
             }
         }
