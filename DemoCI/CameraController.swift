@@ -524,7 +524,7 @@ private extension CameraController {
                     currentDevice.unlockForConfiguration()
                 } catch let error1 as NSError {
                     error = error1
-                    print("\(error)")
+                    print("\(String(describing: error))")
                 } catch {
                     fatalError()
                 }
